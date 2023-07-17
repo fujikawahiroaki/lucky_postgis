@@ -1,0 +1,19 @@
+name: lucky_postgis
+version: 0.1.0
+
+authors:
+  - fujikawahiroaki <fhir0aki3@gmail.com>
+
+crystal: ">= 0.36"
+
+license: MIT
+
+crystalline:
+  main: src/lucky_postgis.cr"
+
+dependencies:
+  avram:
+    github: luckyframework/avram
+
+  postgis:
+    github: fujikawahiroaki/postgis
