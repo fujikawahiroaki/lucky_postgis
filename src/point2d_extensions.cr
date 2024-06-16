@@ -51,6 +51,14 @@ struct PostGIS::Point2D
 
     class Criteria(T, V) < Avram::Criteria(T, V)
       include Avram::IncludesCriteria(T, V)
+
+      def x
+        Criteria(T, Float64).new(rows, "ST_X(#{column}::geometry)")
+      end
+
+      def y
+        Criteria(T, Float64).new(rows, "ST_Y(#{column}::geometry)")
+      end
     end
   end
 end
