@@ -59,6 +59,10 @@ struct PostGIS::Point2D
       def y
         Criteria(T, Float64).new(rows, "ST_Y(#{column}::geometry)")
       end
+
+      def distance(longitude, latitude)
+        Criteria(T, Float64).new(rows, "ST_Distance(#{column}, ST_GeographyFromText('POINT(#{longitude} #{latitude})'))")
+      end
     end
   end
 end
